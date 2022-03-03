@@ -15,3 +15,10 @@
 .p-size{
     font-size: 14px;
 }
+
+.notice-section {
+    background-image: url("../img/a2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
