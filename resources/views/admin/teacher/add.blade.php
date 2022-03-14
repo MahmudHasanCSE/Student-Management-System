@@ -6,9 +6,9 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title mb-4">Add User Form</h4>
-                    <p class="text-center text-success">{{Session::get('message')}}</p>
-                    <form action="{{route('new-user')}}" method="post">
+                    <h4 class="card-title mb-4">Add Teacher Form</h4>
+
+                    <form>
                         @csrf
                         <div class="form-group row mb-4">
                             <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Full name</label>
@@ -33,7 +33,7 @@
                             <div class="col-sm-9">
 
                                 <div>
-                                    <button type="submit" class="btn btn-primary w-md">Create New User</button>
+                                    <button type="submit" class="btn btn-primary w-md">Create New Teacher</button>
                                 </div>
                             </div>
                         </div>

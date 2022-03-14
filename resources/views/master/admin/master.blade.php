@@ -6,7 +6,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Dashboard | Skote - Responsive Bootstrap 4 Admin Dashboard</title>
+    <title>Dashboard | Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -33,21 +33,11 @@
                 <!-- LOGO -->
                 <div class="navbar-brand-box">
                     <a href="index.html" class="logo logo-dark">
-                                <span class="logo-sm">
-                                    <img src="assets/images/logo.svg" alt="" height="22">
-                                </span>
-                        <span class="logo-lg">
-                                    <img src="assets/images/logo-dark.png" alt="" height="17">
-                                </span>
+                        <h1>|BUNKAI|</h1>
                     </a>
 
                     <a href="index.html" class="logo logo-light">
-                                <span class="logo-sm">
-                                    <img src="assets/images/logo-light.svg" alt="" height="22">
-                                </span>
-                        <span class="logo-lg">
-                                    <img src="assets/images/logo-light.png" alt="" height="19">
-                                </span>
+                        <h1 class="text-white mt-5">|BUNKAI|</h1>
                     </a>
                 </div>
 
@@ -178,7 +168,7 @@
                     <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="bx bx-bell bx-tada"></i>
-                        <span class="badge badge-danger badge-pill">3</span>
+                        <span class="badge badge-danger badge-pill"></span>
                     </button>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
                          aria-labelledby="page-header-notifications-dropdown">
@@ -264,9 +254,9 @@
                 <div class="dropdown d-inline-block">
                     <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg"
+                        <img class="rounded-circle header-profile-user" src="https://w7.pngwing.com/pngs/247/564/png-transparent-computer-icons-user-profile-user-avatar-blue-heroes-electric-blue.png"
                              alt="Header Avatar">
-                        <span class="d-none d-xl-inline-block ml-1">Henry</span>
+                        <span class="d-none d-xl-inline-block ml-1">{{Auth::user()->name}}</span>
                         <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right">
@@ -312,6 +302,7 @@
                         </a>
                     </li>
 
+                    @if(Auth::user()->id==2)
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="bx bx-layout"></i>
@@ -322,6 +313,7 @@
                             <li><a href="{{route('manage-user')}}">Manage User</a></li>
                         </ul>
                     </li>
+                    @endif
 
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -329,8 +321,8 @@
                             <span>Teacher Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="ecommerce-products.html">Add Teacher</a></li>
-                            <li><a href="ecommerce-product-detail.html">Manage Teacher</a></li>
+                            <li><a href="{{route('add-teacher')}}">Add Teacher</a></li>
+                            <li><a href="{{route('manage-teacher')}}">Manage Teacher</a></li>
                         </ul>
                     </li>
 

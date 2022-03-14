@@ -6,8 +6,8 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">User Table</h4>
-                        <p class="text-center text-success">{{Session::get('message')}}</p>
+                        <h4 class="card-title">Teacher Table</h4>
+
                         <div class="table-responsive">
                             <table class="table table-bordered table-hover mb-0">
 
@@ -20,21 +20,19 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($users as $user)
                                 <tr>
-                                    <th scope="row">{{$loop->iteration}}</th>
-                                    <td>{{$user->name}}</td>
-                                    <td>{{$user->email}}</td>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>otto@email.com</td>
                                     <td>
-                                        <a href="{{route('edit-user', ['id' => $user->id])}}" class="btn btn-success btn-sm">
+                                        <a href="" class="btn btn-success btn-sm">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <a href="{{route('delete-user', ['id' => $user->id])}}" class="btn btn-danger btn-sm {{$user->id == 2 ? 'disabled' : ''}}">
+                                        <a href="" class="btn btn-danger btn-sm">
                                             <i class="fa fa-trash"></i>
                                         </a>
                                     </td>
                                 </tr>
-                                @endforeach
                                 </tbody>
                             </table>
                         </div>
