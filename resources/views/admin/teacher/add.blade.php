@@ -40,12 +40,6 @@
                                 <input type="file" name="image" class="form-control-file" accept="image/*">
                             </div>
                         </div>
-{{--                        <div class="form-group row mb-4">--}}
-{{--                            <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Status</label>--}}
-{{--                            <div class="col-sm-9">--}}
-{{--                                <input type="number" name="status" class="form-control" id="horizontal-firstname-input">--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
 
                         <div class="form-group row justify-content-end">
                             <div class="col-sm-9">

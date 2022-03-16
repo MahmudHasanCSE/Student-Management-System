@@ -38,16 +38,17 @@
                             <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Image</label>
                             <div class="col-sm-9">
                                 <input type="file" name="image" class="form-control-file" accept="image/*">
-                                <img src="{{asset($teacher->image)}}" alt="" height="100" width="150"/>
+                                <img src="{{asset($teacher->image)}}" alt="" height="100" width="150" class="mt-3"/>
                             </div>
                         </div>
-{{--                        <div class="form-group row mb-4">--}}
-{{--                            <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Status</label>--}}
-{{--                            <div class="col-sm-9">--}}
-{{--                                <input type="number" value="{{$teacher->code}}" name="status" class="form-control" id="horizontal-firstname-input">--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
 
+                        <div class="form-group row mb-4">
+                            <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Status</label>
+                            <div class="col-sm-9">
+                                <label><input type="radio" {{$teacher->status == 1 ? 'checked' : ''}} name="status" value="1"/> Active</label>
+                                <label><input type="radio" {{$teacher->status == 0 ? 'checked' : ''}} name="status" value="0"/> Inactive</label>
+                            </div>
+                        </div>
                         <div class="form-group row justify-content-end">
                             <div class="col-sm-9">
 
