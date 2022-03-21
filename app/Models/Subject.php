@@ -14,6 +14,7 @@ class Subject extends Model
     private static $image;
     private static $imageName;
     private static $imageUrl;
+    private static $message;
 
     public static function getImageUrl($request)
     {
@@ -41,5 +42,20 @@ class Subject extends Model
     public function teacher()
     {
         return $this->belongsTo('App\Models\Teacher');
+    }
+
+    public static function updateSubjectStatus($id)
+    {
+        self::$subject = Subject::find($id);
+        if (self::$subject->status == 0)
+        {
+            self::$subject->status = 1;
+            self::$message = 'Course information active, successful!';
+        } else {
+            self::$subject->status = 0;
+            self::$message = 'Course information inactive, successful';
+        }
+        self::$subject->save();
+        return self::$message;
     }
 }
