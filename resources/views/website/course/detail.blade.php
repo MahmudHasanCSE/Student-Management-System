@@ -4,6 +4,11 @@
     <section class="py-5">
         <div class="container">
             <div class="row">
+                <div class="col">
+                    <p class="text-center text-success">{{Session::get('message')}}</p>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-6">
                     <div class="card card-body rounded-0">
                         <img src="{{asset($subject->image)}}" alt="" class="w-100"/>
@@ -12,11 +17,11 @@
                 <div class="col-md-6">
                     <div class="card card-body rounded-0">
                         <h1>{{$subject->title}}</h1>
-                        <p>Tk. {{$subject->fee}}</p>
+                        <p>Course Fee : {{$subject->fee}}</p>
                         <a href="{{route('enroll-now', ['id' => $subject->id])}}" class="btn btn-outline-success w-25 mx-auto"> Enroll Now </a>
                         <hr/>
-                        <h2>Trainer Name : {{$subject->teacher->name}}</h2>
-                        <img src="{{asset($subject->teacher->image)}}" alt="" height="125" width="125"/>
+                        <h2>Trainer Name: {{$subject->teacher->name}}</h2>
+                        <img src="{{asset($subject->teacher->image)}}" alt="" height="100" width="100"/>
                         <hr/>
                         <div>{!! $subject->short_description !!}</div>
                     </div>
@@ -34,11 +39,10 @@
                         <hr/>
                         <div>{!! $subject->long_description !!}</div>
                         <hr/>
-                        <a href="{{route('enroll-now', ['id' => $subject->id])}}" class="btn btn-outline-success w-25 mx-auto"> Enroll Now </a>
+                        <a href="" class="btn btn-outline-success w-25 mx-auto"> Enroll Now </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 @endsection
