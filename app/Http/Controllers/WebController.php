@@ -16,7 +16,10 @@ class WebController extends Controller
     private $student;
     private $enroll;
     private $data = [];
+<<<<<<< HEAD
     private $check = false;
+=======
+>>>>>>> 79d22149bf1332b23fc5e5a51671eb855c89cb28
 
     public function index()
     {
@@ -40,6 +43,7 @@ class WebController extends Controller
 
     public function enroll($id)
     {
+<<<<<<< HEAD
         if (Session::get('student_id'))
         {
             $this->enroll = new Enroll();
@@ -53,10 +57,14 @@ class WebController extends Controller
         } else {
             return view('website.course.enroll', ['id' => $id]);
         }
+=======
+        return view('website.course.enroll', ['id' => $id]);
+>>>>>>> 79d22149bf1332b23fc5e5a51671eb855c89cb28
     }
 
     public function newEnroll(Request $request, $id)
     {
+<<<<<<< HEAD
         $this->student = Student::where('email', $request->email)->first();
         if ($this->student)
         {
@@ -76,13 +84,26 @@ class WebController extends Controller
             $this->student->mobile   = $request->mobile;
             $this->student->save();
         }
+=======
+        $this->student = new Student();
+        $this->student->name     = $request->name;
+        $this->student->email    = $request->email;
+        $this->student->password = bcrypt($request->mobile);
+        $this->student->mobile   = $request->mobile;
+        $this->student->save();
+>>>>>>> 79d22149bf1332b23fc5e5a51671eb855c89cb28
 
         Session::put('student_id', $this->student->id);
         Session::put('student_name', $this->student->name);
 
         $this->enroll = new Enroll();
+<<<<<<< HEAD
         $this->enroll->subject_id       = $id;
         $this->enroll->student_id       = $this->student->id;
+=======
+        $this->enroll->subject_id = $id;
+        $this->enroll->student_id = $this->student->id;
+>>>>>>> 79d22149bf1332b23fc5e5a51671eb855c89cb28
         $this->enroll->enroll_date      = date('Y-m-d');
         $this->enroll->enroll_timestamp = strtotime(date('Y-m-d'));
         $this->enroll->save();

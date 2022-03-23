@@ -22,11 +22,15 @@
                         {{Session::get('student_name')}}
                     </a>
                     <ul class="dropdown-menu">
+<<<<<<< HEAD
                         <li><a href="{{route('student-dashboard')}}" class="nav-link">Dashboard</a></li>
                         <li><a href="" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('studentLogoutForm').submit();">Logout</a></li>
                         <form action="{{route('student-logout')}}" method="post" id="studentLogoutForm">
                             @csrf
                         </form>
+=======
+                        <li><a href="" class="dropdown-item">Logout</a></li>
+>>>>>>> 79d22149bf1332b23fc5e5a51671eb855c89cb28
                     </ul>
                 </li>
             @else
@@ -56,12 +60,21 @@
                     <h3>Popular Link</h3>
                     <hr/>
                     <ul>
+<<<<<<< HEAD
                         <li><a href="" class="nav-link">Popular Course One</a></li>
                         <li><a href="" class="nav-link">Popular Course Two</a></li>
                         <li><a href="" class="nav-link">Popular Course Three</a></li>
                         <li><a href="" class="nav-link">Popular Course Four</a></li>
                         <li><a href="" class="nav-link">Popular Course Five</a></li>
                         <li><a href="" class="nav-link">Popular Course Six</a></li>
+=======
+                        <li><a href="">Popular Course One</a></li>
+                        <li><a href="">Popular Course Two</a></li>
+                        <li><a href="">Popular Course Three</a></li>
+                        <li><a href="">Popular Course Four</a></li>
+                        <li><a href="">Popular Course Four</a></li>
+                        <li><a href="">Popular Course Four</a></li>
+>>>>>>> 79d22149bf1332b23fc5e5a51671eb855c89cb28
                     </ul>
                 </div>
             </div>

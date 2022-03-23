@@ -9,7 +9,10 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TeacherDashboardController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\AdminCourseController;
+<<<<<<< HEAD
 use App\Http\Controllers\StudentDashboardController;
+=======
+>>>>>>> 79d22149bf1332b23fc5e5a51671eb855c89cb28
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +41,7 @@ Route::get('/user-register', [AuthController::class, 'register'])->name('user-re
 
 Route::get('/teacher-dashboard', [TeacherDashboardController::class, 'index'])->name('teacher-dashboard');
 Route::get('/student-dashboard', [StudentDashboardController::class, 'index'])->name('student-dashboard');
+
 
 
 Route::get('/add-subject', [SubjectController::class, 'index'])->name('add-subject');

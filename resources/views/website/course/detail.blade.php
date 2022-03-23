@@ -18,7 +18,11 @@
                     <div class="card card-body rounded-0">
                         <h1>{{$subject->title}}</h1>
                         <p>Course Fee : {{$subject->fee}}</p>
+<<<<<<< HEAD
                         <a href="{{route('enroll-now', ['id' => $subject->id])}}" class="btn btn-success w-25 mx-auto {{$check == true ? 'disabled btn-danger' : ''}}"> Enroll Now </a>
+=======
+                        <a href="{{route('enroll-now', ['id' => $subject->id])}}" class="btn btn-outline-success w-25 mx-auto"> Enroll Now </a>
+>>>>>>> 79d22149bf1332b23fc5e5a51671eb855c89cb28
                         <hr/>
                         <h2>Trainer Name: {{$subject->teacher->name}}</h2>
                         <img src="{{asset($subject->teacher->image)}}" alt="" height="100" width="100"/>
