@@ -9,7 +9,7 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\TeacherDashboardController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\AdminCourseController;
-
+use App\Http\Controllers\StudentDashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,18 +28,22 @@ use App\Http\Controllers\AdminCourseController;
 Route::get('/', [WebController::class, 'index'])->name('home');
 Route::get('/course-detail/{id}', [WebController::class, 'detail'])->name('course-detail');
 Route::get('/enroll-now/{id}', [WebController::class, 'enroll'])->name('enroll-now');
-
+Route::post('/new-enroll/{id}', [WebController::class, 'newEnroll'])->name('new-enroll');
 
 Route::get('/user-login', [AuthController::class, 'login'])->name('user-login');
 Route::post('/new-login', [AuthController::class, 'newLogin'])->name('new-login');
 Route::post('/user-logout', [AuthController::class, 'logout'])->name('user-logout');
+Route::post('/student-logout', [AuthController::class, 'studentLogout'])->name('student-logout');
 Route::get('/user-register', [AuthController::class, 'register'])->name('user-register');
 
 Route::get('/teacher-dashboard', [TeacherDashboardController::class, 'index'])->name('teacher-dashboard');
+Route::get('/student-dashboard', [StudentDashboardController::class, 'index'])->name('student-dashboard');
+
 
 Route::get('/add-subject', [SubjectController::class, 'index'])->name('add-subject');
 Route::post('/new-subject', [SubjectController::class, 'create'])->name('new-subject');
 Route::get('/manage-subject', [SubjectController::class, 'manage'])->name('manage-subject');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
