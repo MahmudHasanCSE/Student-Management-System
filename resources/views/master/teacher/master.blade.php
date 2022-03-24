@@ -18,7 +18,7 @@
     <!-- Icons Css -->
     <link href="{{asset('/')}}assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="{{asset('/')}}assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/')}}assets/css/app.min.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -122,7 +122,7 @@
                             <span>Course Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="ecommerce-products.html">Approved Course</a></li>
+                            <li><a href="{{route('approved-course')}}">Approved Course</a></li>
                             <li><a href="ecommerce-product-detail.html">Denied Course</a></li>
                             <li><a href="ecommerce-product-detail.html">Enrolled Student</a></li>
                         </ul>

@@ -345,7 +345,6 @@
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
                             <li><a href="{{route('manage-course')}}">Manage Course</a></li>
-                            <li><a href="{{route('manage-student-course')}}">Manage Student Course</a></li>
                         </ul>
                     </li>
 
@@ -355,7 +354,8 @@
                             <span>Student Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="email-inbox.html">Manage Student</a></li>
+                            <li><a href="{{route('manage-student')}}">Manage Student</a></li>
+                            <li><a href="{{route('manage-student-course')}}">Manage Student Course</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -384,11 +384,11 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-6">
-                        <script>document.write(new Date().getFullYear())</script> © BASIS SEIP.
+                        <script>document.write(new Date().getFullYear())</script> © PWLFB3.
                     </div>
                     <div class="col-sm-6">
                         <div class="text-sm-right d-none d-sm-block">
-                            Design & Develop by BASIS SEIP PHP B3
+                            Design & Develop by PWLFB3
                         </div>
                     </div>
                 </div>
