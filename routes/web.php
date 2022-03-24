@@ -40,6 +40,7 @@ Route::get('/teacher-dashboard', [TeacherDashboardController::class, 'index'])->
 Route::get('/student-dashboard', [StudentDashboardController::class, 'index'])->name('student-dashboard');
 
 
+
 Route::get('/add-subject', [SubjectController::class, 'index'])->name('add-subject');
 Route::post('/new-subject', [SubjectController::class, 'create'])->name('new-subject');
 Route::get('/manage-subject', [SubjectController::class, 'manage'])->name('manage-subject');
