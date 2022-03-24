@@ -1,8 +1,7 @@
 @extends('master.front.master')
 
 @section('body')
-
-    <section class="py-5 bg-light">
+    <section class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
@@ -13,7 +12,6 @@
                             <a href="" class="list-group-item">My Payment</a>
                         </div>
                     </div>
-
                 </div>
                 <div class="col-md-9">
                     <div class="card">
@@ -34,10 +32,10 @@
                                 @foreach($enrolls as $enroll)
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
-                                    <td>{{$enroll->subject->title}}</td>
+                                    <td>{{$enroll->subject->title }}</td>
                                     <td>{{\App\Models\Teacher::find($enroll->subject->teacher_id)->name}}</td>
-                                    <td>{{$enroll->subject->fee}}</td>
-                                    <td>{{$enroll->enroll_status}}</td>
+                                    <td>{{$enroll->subject->fee }}</td>
+                                    <td>{{$enroll->enroll_status }}</td>
                                 </tr>
                                 @endforeach
                                 </tbody>
@@ -48,5 +46,4 @@
             </div>
         </div>
     </section>
-
 @endsection

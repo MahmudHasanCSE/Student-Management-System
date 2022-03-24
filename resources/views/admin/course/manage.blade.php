@@ -1,7 +1,6 @@
 @extends('master.admin.master')
 
 @section('body')
-
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
@@ -11,7 +10,7 @@
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover mb-0">
 
-                            <thead class="thead-light">
+                            <thead>
                             <tr>
                                 <th>#</th>
                                 <th>Course Title</th>
@@ -39,13 +38,13 @@
                                     </td>
                                 </tr>
                             @endforeach
+
                             </tbody>
                         </table>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
-    <!-- end row -->
-
 @endsection

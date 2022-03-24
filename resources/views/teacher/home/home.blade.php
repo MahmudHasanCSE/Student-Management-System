@@ -18,5 +18,4 @@
         </div>
     </div>
     <!-- end page title -->
-    <!-- end row -->
 @endsection

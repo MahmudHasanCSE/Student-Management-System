@@ -1,7 +1,6 @@
 @extends('master.front.master')
 
 @section('body')
-
     <section class="py-5">
         <div class="container">
             <div class="row">
@@ -10,7 +9,7 @@
                         <div class="card-header">Login Form</div>
                         <div class="card-body">
                             <p class="text-center text-danger">{{Session::get('message')}}</p>
-                            <form action="{{route('new-login')}}" method="post">
+                            <form action="{{route('new-login')}}" method="POST">
                                 @csrf
                                 <div class="row">
                                     <label class="col-md-3">Email Address</label>
@@ -27,8 +26,8 @@
                                 <div class="row my-3">
                                     <label class="col-md-3">Login As</label>
                                     <div class="col-md-9">
-                                        <label><input type="radio" name="check" value="1"/>Teacher</label>
-                                        <label><input type="radio" name="check" value="0"/>Student</label>
+                                        <label><input type="radio" name="check" value="1"/> Teacher</label>
+                                        <label><input type="radio" name="check" value="0"/> Student</label>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -38,12 +37,10 @@
                                     </div>
                                 </div>
                             </form>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 @endsection

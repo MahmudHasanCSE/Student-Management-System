@@ -29,18 +29,18 @@ class WebController extends Controller
         $this->subject = Subject::find($id);
         if (Session::get('student_id'))
         {
-            $this->enroll = Enroll::where('student_id', Session::get('student_id'))->where('subject_id', $id)->first();
-            if ($this->enroll)
-            {
-                $this->check = true;
-            }
+          $this->enroll  = Enroll::where('student_id', Session::get('student_id'))->where('subject_id', $id)->first();
+          if ($this->enroll)
+          {
+              $this->check = true;
+          }
         }
         return view('website.course.detail', ['subject' => $this->subject, 'check' => $this->check]);
     }
 
     public function enroll($id)
     {
-        if (Session::get('student_id'))
+        if(Session::get('student_id'))
         {
             $this->enroll = new Enroll();
             $this->enroll->subject_id = $id;
@@ -49,8 +49,10 @@ class WebController extends Controller
             $this->enroll->enroll_timestamp = strtotime(date('Y-m-d'));
             $this->enroll->save();
 
-            return redirect('/student-dashboard')->with('message', 'New Course Registration Successful');
-        } else {
+            return redirect('/student-dashboard')->with('message', 'New course registration successfully.');
+        }
+        else
+        {
             return view('website.course.enroll', ['id' => $id]);
         }
     }
@@ -60,15 +62,14 @@ class WebController extends Controller
         $this->student = Student::where('email', $request->email)->first();
         if ($this->student)
         {
-            $this->enroll = Enroll::where('student_id', $this->student->id)->where('subject_id', $id)->first();
+            $this->enroll  = Enroll::where('student_id', $this->student->id)->where('subject_id', $id)->first();
             if ($this->enroll)
             {
-                Session::put('student_id', $this->student->id);
-                Session::put('student_name', $this->student->name);
-                return redirect('/course-detail/'.$id)->with('message', 'You are already enrolled this course! Please try another course.');
+                return redirect('/course-detail/'.$id)->with('message', 'You are already this course. Please try another one.');
             }
-
-        } else {
+        }
+        else
+        {
             $this->student = new Student();
             $this->student->name     = $request->name;
             $this->student->email    = $request->email;
@@ -77,12 +78,14 @@ class WebController extends Controller
             $this->student->save();
         }
 
+
+
         Session::put('student_id', $this->student->id);
         Session::put('student_name', $this->student->name);
 
         $this->enroll = new Enroll();
-        $this->enroll->subject_id       = $id;
-        $this->enroll->student_id       = $this->student->id;
+        $this->enroll->subject_id = $id;
+        $this->enroll->student_id = $this->student->id;
         $this->enroll->enroll_date      = date('Y-m-d');
         $this->enroll->enroll_timestamp = strtotime(date('Y-m-d'));
         $this->enroll->save();
@@ -93,6 +96,6 @@ class WebController extends Controller
             'password'  => $request->mobile,
         ];
         Mail::to($request->email)->send(new EnrollConfirmationMail($this->data));
-        return redirect('/course-detail/'.$id)->with('message', 'Registration completed successfully.');
+        return redirect('/course-detail/'.$id)->with('message', 'Registration successfully complete.');
     }
 }

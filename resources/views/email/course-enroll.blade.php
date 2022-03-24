@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Congratulation Mr. {{$data['name']}}, Your course registration completed successfully.</h1>
+    <h1>Congratulation Mr. {{$data['name']}}, Your course registration successfully complete.</h1>
     <h3>Your Login Credential is given Bellow : </h3>
     <p>User Id : {{$data['user_id']}}</p>
     <p>Password : {{$data['password']}}</p>

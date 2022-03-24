@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Document</title>
     <link rel="stylesheet" href="{{asset('/')}}css/bootstrap.css"/>
@@ -12,7 +13,7 @@
 <body>
 <nav class="navbar navbar-expand-md navbar-light bg-light shadow sticky-top">
     <div class="container">
-        <a href="" class="navbar-brand">S M S</a>
+        <a href="" class="navbar-brand">LOGO</a>
         <ul class="navbar-nav">
             <li><a href="{{route('home')}}" class="nav-link">Home</a></li>
             <li><a href="" class="nav-link">All Course</a></li>
@@ -24,7 +25,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="{{route('student-dashboard')}}" class="nav-link">Dashboard</a></li>
                         <li><a href="" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('studentLogoutForm').submit();">Logout</a></li>
-                        <form action="{{route('student-logout')}}" method="post" id="studentLogoutForm">
+                        <form action="{{route('student-logout')}}" method="POST" id="studentLogoutForm">
                             @csrf
                         </form>
                     </ul>
@@ -56,12 +57,12 @@
                     <h3>Popular Link</h3>
                     <hr/>
                     <ul>
-                        <li><a href="" class="nav-link">Popular Course One</a></li>
-                        <li><a href="" class="nav-link">Popular Course Two</a></li>
-                        <li><a href="" class="nav-link">Popular Course Three</a></li>
-                        <li><a href="" class="nav-link">Popular Course Four</a></li>
-                        <li><a href="" class="nav-link">Popular Course Five</a></li>
-                        <li><a href="" class="nav-link">Popular Course Six</a></li>
+                        <li><a href="">Popular Course One</a></li>
+                        <li><a href="">Popular Course Two</a></li>
+                        <li><a href="">Popular Course Three</a></li>
+                        <li><a href="">Popular Course Four</a></li>
+                        <li><a href="">Popular Course Four</a></li>
+                        <li><a href="">Popular Course Four</a></li>
                     </ul>
                 </div>
             </div>
@@ -92,7 +93,7 @@
         <hr class="bg-white mt-5"/>
         <div class="row">
             <div class="col-12">
-                <p class="text-white text-center mb-0">Copyright@2022, All rights reserved by PWLFB3</p>
+                <p class="text-white text-center mb-0">Copyright@2022, All right received by BASIS SEIP PWLFB-3</p>
             </div>
         </div>
     </div>

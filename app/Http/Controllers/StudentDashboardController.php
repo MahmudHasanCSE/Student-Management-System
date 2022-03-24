@@ -1,16 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Enroll;
-use App\Models\Subject;
 use Illuminate\Http\Request;
 use Session;
-
 class StudentDashboardController extends Controller
 {
-    //
-
     private $enrolls;
 
     public function index()

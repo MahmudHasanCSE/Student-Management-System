@@ -7,9 +7,8 @@ use Illuminate\Http\Request;
 
 class AdminCourseController extends Controller
 {
-    //
-    private $subjects;
     private $subject;
+    private $subjects;
     private $message;
 
     public function manage()
@@ -21,7 +20,7 @@ class AdminCourseController extends Controller
     public function detail($id)
     {
         $this->subject = Subject::find($id);
-        return view('admin.course.detail', ['subject' => $this->subject]);
+        return view('admin.course.detail', ['subject' => $this->subject ]);
     }
 
     public function updateStatus($id)

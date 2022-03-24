@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    //
     private $user;
     private $users;
 
@@ -18,16 +17,13 @@ class UserController extends Controller
 
     public function create(Request $request)
     {
-//        return $request->all();
         User::newUser($request);
-
-        return redirect('/add-user')->with('message', 'User information created successfully!');
+        return redirect('/add-user')->with('message', 'User info create successfully');
     }
 
     public function manage()
     {
         $this->users = User::all();
-//        return $this->users;
         return view('admin.user.manage', ['users' => $this->users]);
     }
 
@@ -40,7 +36,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         User::updateUser($request, $id);
-        return redirect('/manage-user')->with('message', 'User information updated successfully');
+        return redirect('/manage-user')->with('message', 'User info update successfully.');
     }
 
     public function delete($id)
@@ -48,4 +44,3 @@ class UserController extends Controller
 
     }
 }
-

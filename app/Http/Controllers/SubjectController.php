@@ -8,8 +8,6 @@ use Session;
 
 class SubjectController extends Controller
 {
-    //
-
     private $subject;
     private $subjects;
 
@@ -21,13 +19,13 @@ class SubjectController extends Controller
     public function create(Request $request)
     {
         Subject::newSubject($request);
-        return redirect()->back()->with('message', 'Subject information created successfully!');
+        return redirect()->back()->with('message', 'Subject info create successfully.');
     }
 
     public function manage()
     {
         $this->subjects = Subject::where('teacher_id', Session::get('user_id'))->get();
-
         return view('teacher.subject.manage', ['subjects' => $this->subjects]);
     }
+
 }

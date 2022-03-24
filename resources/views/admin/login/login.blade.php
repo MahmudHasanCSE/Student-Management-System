@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
 
+
+
 <head>
 
     <meta charset="utf-8" />
@@ -34,7 +36,7 @@
                             <div class="col-7">
                                 <div class="text-primary p-4">
                                     <h5 class="text-primary">Welcome Back !</h5>
-                                    <p>Sign in to continue</p>
+                                    <p>Sign in to continue to Skote.</p>
                                 </div>
                             </div>
                             <div class="col-5 align-self-end">
@@ -53,16 +55,16 @@
                             </a>
                         </div>
                         <div class="p-2">
-                            <form class="form-horizontal" action="{{route('login')}}" method="post">
+                            <form class="form-horizontal" action="{{route('login')}}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label for="username">Email Address</label>
-                                    <input type="email" name="email" class="form-control" id="username" placeholder="Enter your email">
+                                    <input type="email" name="email" class="form-control" id="username" placeholder="Enter Email"/>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="userpassword">Password</label>
-                                    <input type="password" name="password" class="form-control" id="userpassword" placeholder="Enter your password">
+                                    <input type="password" name="password" class="form-control" id="userpassword" placeholder="Enter password">
                                 </div>
 
                                 <div class="custom-control custom-checkbox">
@@ -73,8 +75,6 @@
                                 <div class="mt-3">
                                     <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">Log In</button>
                                 </div>
-
-
                                 <div class="mt-4 text-center">
                                     <a href="" class="text-muted"><i class="mdi mdi-lock mr-1"></i> Forgot your password?</a>
                                 </div>
@@ -83,6 +83,8 @@
 
                     </div>
                 </div>
+
+
             </div>
         </div>
     </div>
@@ -99,4 +101,6 @@
 <script src="{{asset('/')}}assets/js/app.js"></script>
 </body>
 
+
 </html>
+

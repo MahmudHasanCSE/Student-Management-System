@@ -6,7 +6,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Dashboard | Admin</title>
+    <title>Dashboard | Skote - Responsive Bootstrap 4 Admin Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
@@ -33,11 +33,21 @@
                 <!-- LOGO -->
                 <div class="navbar-brand-box">
                     <a href="index.html" class="logo logo-dark">
-                        <h1>|BUNKAI|</h1>
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo.svg" alt="" height="22">
+                                </span>
+                        <span class="logo-lg">
+                                    <img src="assets/images/logo-dark.png" alt="" height="17">
+                                </span>
                     </a>
 
                     <a href="index.html" class="logo logo-light">
-                        <h1 class="text-white mt-5">|BUNKAI|</h1>
+                                <span class="logo-sm">
+                                    <img src="assets/images/logo-light.svg" alt="" height="22">
+                                </span>
+                        <span class="logo-lg">
+                                    <img src="assets/images/logo-light.png" alt="" height="19">
+                                </span>
                     </a>
                 </div>
 
@@ -52,6 +62,7 @@
                         <span class="bx bx-search-alt"></span>
                     </div>
                 </form>
+
             </div>
 
             <div class="d-flex">
@@ -168,7 +179,7 @@
                     <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="bx bx-bell bx-tada"></i>
-                        <span class="badge badge-danger badge-pill"></span>
+                        <span class="badge badge-danger badge-pill">3</span>
                     </button>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
                          aria-labelledby="page-header-notifications-dropdown">
@@ -254,9 +265,9 @@
                 <div class="dropdown d-inline-block">
                     <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="rounded-circle header-profile-user" src="https://w7.pngwing.com/pngs/247/564/png-transparent-computer-icons-user-profile-user-avatar-blue-heroes-electric-blue.png"
+                        <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg"
                              alt="Header Avatar">
-                        <span class="d-none d-xl-inline-block ml-1">{{Auth::user()->name}}</span>
+                        <span class="d-none d-xl-inline-block ml-1"> {{Auth::user()->name}} </span>
                         <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                     </button>
                     <div class="dropdown-menu dropdown-menu-right">
@@ -266,10 +277,11 @@
                         <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="bx bx-wrench font-size-16 align-middle mr-1"></i> Settings</a>
                         <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle mr-1"></i> Lock screen</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item text-danger" href="#" onclick="event.preventDefault();document.getElementById('logoutForm').submit();">
-                            <i class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> Logout</a>
+                        <a class="dropdown-item text-danger" href="#" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();">
+                            <i class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> Logout
+                        </a>
 
-                        <form action="{{route('logout')}}" method="post" id="logoutForm">
+                        <form action="{{route('logout')}}" method="POST" id="logoutForm">
                             @csrf
                         </form>
 
@@ -297,12 +309,11 @@
 
                     <li>
                         <a href="javascript: void(0);" class="waves-effect">
-                            <i class="bx bx-home-circle"></i><span class="badge badge-pill badge-info float-right"></span>
+                            <i class="bx bx-home-circle"></i>
                             <span>Dashboards</span>
                         </a>
                     </li>
-
-                    @if(Auth::user()->id==2)
+                    @if(Auth::user()->id == 1)
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="bx bx-layout"></i>
@@ -310,10 +321,11 @@
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
                             <li><a href="{{route('add-user')}}">Add User</a></li>
-                            <li><a href="{{route('manage-user')}}">Manage User</a></li>
+                            <li><a href="{{route('manage-user')}}">Manage USer</a></li>
                         </ul>
                     </li>
                     @endif
+
 
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -333,7 +345,7 @@
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
                             <li><a href="{{route('manage-course')}}">Manage Course</a></li>
-{{--                            <li><a href="crypto-buy-sell.html">Buy/Sell</a></li>--}}
+                            <li><a href="{{route('manage-student-course')}}">Manage Student Course</a></li>
                         </ul>
                     </li>
 
@@ -346,7 +358,6 @@
                             <li><a href="email-inbox.html">Manage Student</a></li>
                         </ul>
                     </li>
-
                 </ul>
             </div>
             <!-- Sidebar -->
@@ -361,23 +372,23 @@
 
         <div class="page-content">
             <div class="container-fluid">
-
                 @yield('body')
-
             </div>
             <!-- container-fluid -->
         </div>
         <!-- End Page-content -->
 
+
+
         <footer class="footer">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-6">
-                        <script>document.write(new Date().getFullYear())</script> © PWLFB3.
+                        <script>document.write(new Date().getFullYear())</script> © BASIS SEIP.
                     </div>
                     <div class="col-sm-6">
                         <div class="text-sm-right d-none d-sm-block">
-                            Copyright@2022, All right reserved by PWLFB3
+                            Design & Develop by BASIS SEIP PHP B3
                         </div>
                     </div>
                 </div>

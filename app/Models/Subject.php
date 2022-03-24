@@ -21,7 +21,7 @@ class Subject extends Model
         self::$image = $request->file('image');
         self::$imageName = self::$image->getClientOriginalName();
         self::$directory = 'subject-images/';
-        self::$image->move(self::$directory,self::$imageName);
+        self::$image->move(self::$directory, self::$imageName);
         self::$imageUrl = self::$directory.self::$imageName;
         return self::$imageUrl;
     }
@@ -29,13 +29,13 @@ class Subject extends Model
     public static function newSubject($request)
     {
         self::$subject = new Subject();
-        self::$subject->teacher_id = Session::get('user_id');
-        self::$subject->title = $request->title;
-        self::$subject->code = $request->code;
-        self::$subject->fee = $request->fee;
-        self::$subject->short_description = $request->short_description;
-        self::$subject->long_description = $request->long_description;
-        self::$subject->image = self::getImageUrl($request);
+        self::$subject->teacher_id          = Session::get('user_id');
+        self::$subject->title               = $request->title;
+        self::$subject->code                = $request->code;
+        self::$subject->fee                 = $request->fee;
+        self::$subject->short_description   = $request->short_description;
+        self::$subject->long_description    = $request->long_description;
+        self::$subject->image               = self::getImageUrl($request);
         self::$subject->save();
     }
 
@@ -50,10 +50,12 @@ class Subject extends Model
         if (self::$subject->status == 0)
         {
             self::$subject->status = 1;
-            self::$message = 'Course information active, successful!';
-        } else {
+            self::$message = 'Course info active successfully.';
+        }
+        else
+        {
             self::$subject->status = 0;
-            self::$message = 'Course information inactive, successful';
+            self::$message = 'Course info inactive successfully.';
         }
         self::$subject->save();
         return self::$message;

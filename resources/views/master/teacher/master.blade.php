@@ -11,15 +11,14 @@
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset('/')}}assets/images/favicon.ico">
-
+    <!-- Summernote css -->
+    <link href="{{asset('/')}}assets/libs/summernote/summernote-bs4.min.css" rel="stylesheet" type="text/css" />
     <!-- Bootstrap Css -->
     <link href="{{asset('/')}}assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
     <link href="{{asset('/')}}assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="{{asset('/')}}assets/css/app.min.css" rel="stylesheet" type="text/css" />
-    <!-- Summernote css -->
-    <link href="{{asset('/')}}assets/libs/summernote/summernote-bs4.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/')}}assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -59,7 +58,6 @@
             </div>
 
             <div class="d-flex">
-
                 <div class="dropdown d-inline-block">
                     <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -76,7 +74,7 @@
                         <a class="dropdown-item" href="#"><i class="bx bx-lock-open font-size-16 align-middle mr-1"></i> Lock screen</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item text-danger" href="#" onclick="event.preventDefault(); document.getElementById('teacherLogoutForm').submit();"><i class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> Logout</a>
-                        <form action="{{route('user-logout')}}" method="post" id="teacherLogoutForm">
+                        <form action="{{route('user-logout')}}" method="POST" id="teacherLogoutForm">
                             @csrf
                         </form>
                     </div>
@@ -103,7 +101,7 @@
 
                     <li>
                         <a href="javascript: void(0);" class="waves-effect">
-                            <i class="bx bx-home-circle"></i><span class="badge badge-pill badge-info float-right"></span>
+                            <i class="bx bx-home-circle"></i><span class="badge badge-pill badge-info float-right">03</span>
                             <span>Dashboards</span>
                         </a>
                     </li>
@@ -118,16 +116,15 @@
                             <li><a href="{{route('manage-subject')}}">Manage Subject</a></li>
                         </ul>
                     </li>
-
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="bx bx-store"></i>
                             <span>Course Module</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="">Approved Course</a></li>
-                            <li><a href="">Denied Course</a></li>
-                            <li><a href="">Enrolled Student</a></li>
+                            <li><a href="ecommerce-products.html">Approved Course</a></li>
+                            <li><a href="ecommerce-product-detail.html">Denied Course</a></li>
+                            <li><a href="ecommerce-product-detail.html">Enrolled Student</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -145,6 +142,7 @@
         <div class="page-content">
             <div class="container-fluid">
                 @yield('body')
+                <!-- end row -->
             </div>
             <!-- container-fluid -->
         </div>
@@ -318,17 +316,15 @@
 <script src="{{asset('/')}}assets/libs/apexcharts/apexcharts.min.js"></script>
 
 <script src="{{asset('/')}}assets/js/pages/dashboard.init.js"></script>
-
 <!-- Summernote js -->
 <script src="{{asset('/')}}assets/libs/summernote/summernote-bs4.min.js"></script>
 
 <!-- init js -->
 <script src="{{asset('/')}}assets/js/pages/form-editor.init.js"></script>
-
-
 <!-- App js -->
 <script src="{{asset('/')}}assets/js/app.js"></script>
 </body>
+
 
 
 </html>

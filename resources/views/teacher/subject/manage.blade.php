@@ -1,24 +1,21 @@
 @extends('master.teacher.master')
 
 @section('body')
-
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Manage Subject</h4>
-
+                    <p class="text-center text-success">{{Session::get('message')}}</p>
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover mb-0">
-
-                            <thead class="thead-light">
+                            <thead>
                             <tr>
                                 <th>#</th>
                                 <th>Subject Title</th>
                                 <th>Code</th>
                                 <th>Fee</th>
                                 <th>Teacher Name</th>
-                                <th>Address</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -42,13 +39,13 @@
                                     </td>
                                 </tr>
                             @endforeach
+
                             </tbody>
                         </table>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
-    <!-- end row -->
-
 @endsection

@@ -2,13 +2,12 @@
 
 @section('body')
     <div class="row">
-
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title mb-4">Edit User Form</h4>
                     <p class="text-center text-success">{{Session::get('message')}}</p>
-                    <form action="{{route('update-user', ['id'=>$user->id])}}" method="post">
+                    <form action="{{route('update-user', ['id'=> $user->id])}}" method="POST">
                         @csrf
                         <div class="form-group row mb-4">
                             <label for="horizontal-firstname-input" class="col-sm-3 col-form-label">Full name</label>
@@ -31,9 +30,8 @@
 
                         <div class="form-group row justify-content-end">
                             <div class="col-sm-9">
-
                                 <div>
-                                    <button type="submit" class="btn btn-primary w-md">Update User Information</button>
+                                    <button type="submit" class="btn btn-primary w-md">Update User Info</button>
                                 </div>
                             </div>
                         </div>
@@ -41,6 +39,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 @endsection

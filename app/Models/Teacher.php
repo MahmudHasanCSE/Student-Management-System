@@ -19,7 +19,7 @@ class Teacher extends Model
         self::$image = $request->file('image');
         self::$imageName = self::$image->getClientOriginalName();
         self::$directory = 'teacher-images/';
-        self::$image->move(self::$directory,self::$imageName);
+        self::$image->move(self::$directory, self::$imageName);
         self::$imageUrl = self::$directory.self::$imageName;
         return self::$imageUrl;
     }
@@ -27,21 +27,20 @@ class Teacher extends Model
     public static function newTeacher($request, $code)
     {
         self::$teacher = new Teacher();
-        self::$teacher->name     = $request->name;
-        self::$teacher->code     = $code;
-        self::$teacher->email    = $request->email;
-        self::$teacher->password = bcrypt($request->mobile);
-        self::$teacher->mobile   = $request->mobile;
-        self::$teacher->address  = $request->address;
-        self::$teacher->image    = self::getImageUrl($request);
+        self::$teacher->name    = $request->name;
+        self::$teacher->code    = $code;
+        self::$teacher->email   = $request->email;
+        self::$teacher->password= bcrypt($request->mobile);
+        self::$teacher->mobile  = $request->mobile;
+        self::$teacher->address = $request->address;
+        self::$teacher->image   = self::getImageUrl($request);
         self::$teacher->save();
-
     }
 
     public static function updateTeacher($request, $id, $code)
     {
         self::$teacher = Teacher::find($id);
-        if ($request->file('image'))
+        if($request->file('image'))
         {
             if (file_exists(self::$teacher->image))
             {
@@ -53,15 +52,16 @@ class Teacher extends Model
         {
             self::$imageUrl = self::$teacher->image;
         }
-
         self::$teacher->name    = $request->name;
         self::$teacher->code    = $code;
         self::$teacher->email   = $request->email;
-        self::$teacher->password = bcrypt($request->mobile);
+        self::$teacher->password= bcrypt($request->mobile);
         self::$teacher->mobile  = $request->mobile;
         self::$teacher->address = $request->address;
         self::$teacher->image   = self::$imageUrl;
         self::$teacher->status  = $request->status;
         self::$teacher->save();
+
     }
+
 }

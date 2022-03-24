@@ -17,12 +17,13 @@ class SuperAdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->id == 2)
+        if (Auth::user()->id == 1)
         {
             return $next($request);
         }
-        else {
-        return redirect('/dashboard')->with('message', 'Access denied');
+        else
+        {
+            return redirect('/dashboard')->with('message', 'Access denied');
         }
     }
 }
