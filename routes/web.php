@@ -33,9 +33,14 @@ Route::post('/new-login', [AuthController::class, 'newLogin'])->name('new-login'
 Route::post('/user-logout', [AuthController::class, 'logout'])->name('user-logout');
 Route::post('/student-logout', [AuthController::class, 'studentLogout'])->name('student-logout');
 Route::get('/user-register', [AuthController::class, 'register'])->name('user-register');
+Route::post('/new-registration', [AuthController::class, 'newRegistration'])->name('new-registration');
 
 Route::get('/teacher-dashboard', [TeacherDashboardController::class, 'index'])->name('teacher-dashboard');
 Route::get('/student-dashboard', [StudentDashboardController::class, 'index'])->name('student-dashboard');
+Route::get('/student-profile', [StudentDashboardController::class, 'profile'])->name('student-profile');
+Route::post('/update-student-profile/{id}', [StudentDashboardController::class, 'updateProfile'])->name('update-student-profile');
+Route::get('/change-password', [StudentDashboardController::class, 'changePassword'])->name('change-password');
+Route::post('/update-student-password/{id}', [StudentDashboardController::class, 'updatePassword'])->name('update-student-password');
 
 
 Route::get('/add-subject', [SubjectController::class, 'index'])->name('add-subject');
